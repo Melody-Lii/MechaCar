@@ -1,3 +1,58 @@
-Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
-Is the slope of the linear model considered to be zero? Why or why not?
-Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+# MPG Regression
+
+Residuals:     Min       1Q   Median       3Q      Max -21.3395  -4.1155  -0.2094   6.8789  17.2672 Coefficients:                   Estimate Std. Error t value Pr(>|t|)    (Intercept)      -1.076e+02  1.576e+01  -6.823 1.87e-08 ***vehicle.length    6.240e+00  6.609e-01   9.441 3.05e-12 ***vehicle.weight    1.277e-03  6.948e-04   1.837   0.0728 .  spoiler.angle     8.031e-02  6.656e-02   1.207   0.2339    ground.clearance  3.659e+00  5.394e-01   6.784 2.13e-08 ***---Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1Residual standard error: 8.853 on 45 degrees of freedomMultiple R-squared:  0.7032,	Adjusted R-squared:  0.6768 F-statistic: 26.65 on 4 and 45 DF,  p-value: 2.277e-11
+
+1. Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+
+Variables used: Vehicle Length, Vehicle Weight, Spoiler Angle, Ground Clearance.
+For the p-value that > 0.5%, we can see the variables of vehicle length and ground clearance provided a non-random amount of variance to the mpg values in the dataset. 
+
+2. Is the slope of the linear model considered to be zero? Why or why not?
+
+According to the p-value, the slope of the linear model is not zero. The p-value is smaller than our assumed significance level of 0.05%. Therefore, there is sufficient evidence to reject our null hypothesis. 
+
+3. Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+
+The linear model does predict the mpg of MechaCar prototypes. Because he r-squared from our linear regression model is .7032, which means that roughly 70% of all quarter-mile time predictions will be correct when using this linear model. 
+
+
+#SUSPENSION COIL SUMMARY
+
+1. The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per inch. Does the current manufacturing data meet this design specification? Why or why not?
+
+Looking at the descriptive statistics of the suspension coil data set, the std dev is 8.73 1 which means the variance is less than 100 pounds per inch, so current manufacturing data meet this design specification.
+
+Mean = 1499.531
+Median = 1499.747
+Variance = 76.235
+Std Dev = 8.731
+
+2. Provide a small writeup of your interpretation and findings for the t-test results
+
+One Sample t-testLot 1:
+data:  (lot_1$PSI)t = 0.12028, df = 49, p-value = 0.9048alternative hypothesis: true mean is not equal to 150095 percent confidence interval: 1499.714 1500.322sample estimates:mean of x  1500.018 Lot 2:
+data:  (lot_2$PSI)t = -0.95324, df = 49, p-value = 0.3451alternative hypothesis: true mean is not equal to 150095 percent confidence interval: 1498.666 1500.476sample estimates:mean of x  1499.571 
+
+Lot 3:
+
+data:  (lot_3$PSI)t = -0.47484, df = 49, p-value = 0.637alternative hypothesis: true mean is not equal to 150095 percent confidence interval: 1494.789 1503.219sample estimates:mean of x  1499.004 
+I separated 3 lots from the suspension coil dataset.Then ran the t-test on each lot while setting the true mean to 1500 PSI. Looking at the p-values for each lot, we do not reject the null hypothesis since all p-values greater than 0.05. So the statistical and population means are statistically similar.
+
+# Design Your Own Study
+
+
+To prove MechCar outperforms the competition in all aspects, we will look at fuel efficiency, cost, number of customization options, horsepower, and estimated lifetime mileage. 
+
+With this data, we will use means to answer the questions: do we have more customization, more horsepower, better fuel efficiency, lower costs, and longer lifetime. 
+
+We will apply a series of two-sample T-tests on each data column for our cars vs the competition to prove our cars have statistically different, better means than the competition. 
+
+With null hypotheses there is no statistical difference between the two means, and 
+alternate hypothesis there is a statistical difference between the two sample means. 
+
+To complete this study, we will need to collect data for the listed variables above from our cars, and the cars of our competition. 
+
+
+
+
+
